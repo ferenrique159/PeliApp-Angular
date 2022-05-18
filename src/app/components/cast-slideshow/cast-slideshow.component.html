@@ -1,0 +1,12 @@
+<!-- <swiper [effect]="'cards'" [grabCursor]="true" class="swiper-wrapper text-white text-center" *ngFor="let actor of cast">
+    <ng-template swiperSlide> {{ actor.name }} </ng-template>
+</swiper>
+-->
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div *ngFor="let actor of cast" class="swiper-slide text-white text-center">
+            <img [src]="actor.profile_path | poster" class="img-thumbnail" /> {{ actor.name }}
+        </div>
+    </div>
+</div>

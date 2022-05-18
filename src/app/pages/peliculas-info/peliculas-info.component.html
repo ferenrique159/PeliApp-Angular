@@ -1,0 +1,31 @@
+<div class="row" *ngIf="movieRp">
+    <div class="col-md-6">
+        <img [src]=" movieRp.poster_path | poster " [alt]="  movieRp.title " class="img-thumbnail">
+    </div>
+    <div class="col-md-6 text-white">
+        {{ movieRp.title }}
+
+        <div class="col">
+            <star-rating [value]="movieRp.vote_average" [totalstars]="10" checkedcolor="yellow" uncheckedcolor="grey" size="25px" [readonly]="false">
+            </star-rating>
+        </div>
+        <div class="col text-white ">
+            {{ movieRp.vote_average }}
+        </div>
+        <div class="row mt-2">
+            <div class="col text-white">
+                {{ movieRp.overview }}
+            </div>
+            <div class="row mt-5">
+                <div class="col">
+                    <button class="btn btn-outline-info" (click)="onRegresar()"> Regresar </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-5 ">
+    <div class="col" *ngIf="cast.length > 0">
+        <app-cast-slideshow [cast]="cast"></app-cast-slideshow>
+    </div>
+</div>

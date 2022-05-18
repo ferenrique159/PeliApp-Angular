@@ -1,0 +1,38 @@
+export interface CarteleraResponsive {
+    dates:         Dates;
+    page:          number;
+    results:       Movies[];
+    total_pages:   number;
+    total_results: number;
+}
+
+export interface Dates {
+    maximum: Date;
+    minimum: Date;
+}
+
+export interface Movies {
+    [x: string]: any;
+    adult:             boolean;
+    backdrop_path:     string;
+    genre_ids:         number[];
+    id:                number;
+    original_language: OriginalLanguage;
+    original_title:    string;
+    overview:          string;
+    popularity:        number;
+    poster_path:       string;
+    release_date:      Date;
+    title:             string;
+    video:             boolean;
+    vote_average:      number;
+    vote_count:        number;
+}
+
+export enum OriginalLanguage {
+    En = "en",
+    Es = "es",
+    Fr = "fr",
+}
+
+//  para conseguir esta interface ordenada con cada valor predeterminado traido a traves de un get o un POST se realizo en quicktype y copio y pego colocando "solo interfaces"
